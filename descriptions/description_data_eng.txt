@@ -1,0 +1,52 @@
+[Data Descriptions]
+
+◾ mark 2.1: Thumping Sounds vs. Other Noises
+- Target (Positive): Heavy footsteps, running, thudding, or objects dropping — 50 samples
+- Others (Negative): Voices, TV, shower, drill, ambient noise — 100 samples (to be updated to 200)
+- Unlabeled: Ambient sounds during suspected noise hours (appliances, casual conversations, faint music, etc.) — 500 samples
+
+◾ mark 2.2: Shower/Toilet Water Sounds vs. Other Noises
+- Target (Positive): Shower stream, toilet flushing, running water from faucets — 50 samples
+- Others (Negative): Thumps, voices, TV, drill, ventilation sounds — 100 samples (to be updated to 200)
+- Unlabeled: Sounds near the bathroom (e.g., tooth brushing, turning on the sink, light conversation, ventilation) — 500 samples
+
+◾ mark 2.3: Construction/Drilling Sounds vs. Other Noises
+- Target (Positive): Concrete impact, drilling, hammering — 50 samples
+- Others (Negative): Voices, thumps, shower sounds, appliance noise — 100 samples (to be updated to 200)
+- Unlabeled: Indoor/outdoor mechanical noise, motor hums, ventilation, low-frequency vibrations — 500 samples
+
+◾ mark 2.4: Daily Conversational Noise vs. Other Noises
+- Target (Positive): Speaking, casual conversation, TV dialogue, phone calls — 100 samples (to be updated to 200)
+- Others (Negative): Thumps, drilling, shower sounds, ventilation — 100 samples (to be updated to 200)
+- Unlabeled: Various everyday sounds (laughing, objects bumping, background music, street noise) — 500 samples
+
+◾ Sample Rate 16000Hz
+A sample rate of 16000Hz has been selected as the standard 
+for preprocessing audio data in this project. 
+The sample rate refers to the number of samples 
+extracted from an audio signal per second, measured in Hertz (Hz). 
+A rate of 16000Hz means that 16000 samples are captured per second, 
+which directly affects the time resolution and frequency range 
+that can be reproduced from the audio.
+
+There are several key reasons for choosing a 16kHz sample rate. 
+First, most human speech and everyday environmental sounds 
+fall within the 0–8000Hz frequency range. 
+According to the Nyquist theorem, a 16kHz sampling rate can 
+accurately capture frequencies up to 8000Hz, 
+which is sufficient for the types of sounds targeted in this project. 
+Second, using a higher sample rate (e.g., 44.1kHz) may include 
+unnecessary high-frequency data that the model does not need, 
+increasing computation and training time without practical benefits. 
+Third, widely used speech AI datasets such as Google Speech Commands 
+and Mozilla Common Voice adopt 16kHz as a standard, 
+and major audio processing libraries like torchaudio and librosa 
+are optimized for this setting. 
+Fourth, since the model uses mel spectrogram-based inputs 
+with a logarithmic frequency scale, 
+excessively high sample rates offer little to no additional advantage in performance.
+
+Therefore, a sample rate of 16000Hz is a well-balanced choice for this project, 
+which focuses on classifying inter-floor noise and daily environmental sounds. 
+It ensures consistency in model inputs and supports stable quality 
+during both training and inference.

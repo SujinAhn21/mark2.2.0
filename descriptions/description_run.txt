@@ -1,0 +1,28 @@
+1. Anaconda Prompt에서 실행하는 법
+1) 가상환경 활성화
+conda activate [가상환경이름] 난 vild-audio다
+그래서 conda activate vild-audio
+2) 프로젝트 폴더로 이동
+cd "C:\Users\user\Desktop\AI_model\mark2.2.0"
+3) 파이썬 스크립트 실행
+python run_all.py
+
+2. VSC 프롬프트(터미널)에서 실행하는 법
+1) 오른쪽 상단에 있는 Python 인터프리터 선택 버튼 클릭
+-> Python: Select Interpreter
+-> 방금 만든 가상환경 선택
+2) VSC 내 터미널 열기: ctrl + '
+3) 터미널에 입력: python run_all.py
+
+3. 데이터셋이 15.00초로 안 떨어져서 
+   그게 세그먼트 수에 영향이 가는 경우가 있다.
+   이를 위해 segments.py로 한 번 더 확인해야 한다.
+=> others_156.wav 가 14.98초(14초)로 segment 수가 13개, 
+  나머지는 15.00초라 segment가 14개.
+  * 지금은 others_156.wav 를 삭제하고 실행하고, 나중에 데이터 받아서 
+    다시 같은 이름으로 넣을 계획..
+
+4. 답답하면 작업관리자 활용
+- 왜인지 모르지만 강제 print 하도록 해도 student train 할때는 출력이 잘 안나온다.
+- 학습은 오래걸리는데 너무 답답하다. 그때는 윈도우 작업관리자에서 cpu 사용량을 보며
+  마음을 다잡는 수밖에..
